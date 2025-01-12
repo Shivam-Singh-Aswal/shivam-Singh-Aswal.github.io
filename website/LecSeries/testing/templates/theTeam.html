@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - A. N. Mitra Memorial Lecture Series</title>
+    <link rel="stylesheet" href="{% static 'teampagecss.css' %}">
+</head>
+<body>
+	<header>
+		<nav class="navbar">
+	        <div class="nav-links">
+	            <a href="/" class="nav-item">Home</a>
+	            <a href="/about" class="nav-item">About</a>
+	            <div class="dropdown">
+	                <div class="dropbtn">Schedule ▾</div>
+	                <div class="dropdown-content">
+	                    <a href="/schedule">Day 1</a>
+	                    <a href="/schedule">Day 2</a>
+	                    <a href="/schedule">Ed Witten's Lecture</a>
+	                </div>
+	            </div>
+	            <a href="/teaminfo" class="nav-item">Team</a>
+
+	        </div>
+	        <!--<div class="logo">Logo</div> -->
+	        <div class="nav-right">
+	            <a href="/register"> <button class="register-btn">Register</button></a>
+	            <div class="dropdown">
+	                <div class="dropbtn"> &nbsp&nbsp▾&nbsp&nbsp </div>
+	                <div class="dropdown-content">
+	                    <a href="/attendees">Attendees</a>
+	                </div>
+	            </div>
+	        </div>
+	    </nav>
+	</header>
+
+    <div class="team-container">
+        <div class="team-header">
+            <!-- <p class="subtitle">Unity</p> -->
+            <h1>Our Team</h1>
+            <p class="description">Meet the dedicated individuals behind our memorial series.</p>
+        </div>
+
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <div class="member-image placeholder"></div>
+                <h3>Alice Johnson</h3>
+                <p class="role">Event Coordinator</p>
+                <p class="bio">Passionate about creating impactful experiences for our community.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin">LinkedIn</a>
+                    <a href="#" class="social-link twitter">Twitter</a>
+                    <a href="#" class="social-link dribbble">Dribbble</a>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <div class="member-image placeholder"></div>
+                <h3>Mark Thompson</h3>
+                <p class="role">Lead Speaker</p>
+                <p class="bio">Expert in public speaking with years of experience.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin">LinkedIn</a>
+                    <a href="#" class="social-link twitter">Twitter</a>
+                    <a href="#" class="social-link dribbble">Dribbble</a>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <div class="member-image placeholder"></div>
+                <h3>Sarah Lee</h3>
+                <p class="role">Marketing Director</p>
+                <p class="bio">Focused on promoting our mission and engaging the audience.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin">LinkedIn</a>
+                    <a href="#" class="social-link twitter">Twitter</a>
+                    <a href="#" class="social-link dribbble">Dribbble</a>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <div class="member-image placeholder"></div>
+                <h3>David Kim</h3>
+                <p class="role">Technical Lead</p>
+                <p class="bio">Ensuring seamless live streaming and technical support for our events.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin">LinkedIn</a>
+                    <a href="#" class="social-link twitter">Twitter</a>
+                    <a href="#" class="social-link dribbble">Dribbble</a>
+                </div>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="team-member">
+                <div class="member-image placeholder"></div>
+                <h3>Emily Carter</h3>
+                <p class="role">Content Manager</p>
+                <p class="bio">Crafting engaging narratives to highlight our speakers and their contributions.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin">LinkedIn</a>
+                    <a href="#" class="social-link twitter">Twitter</a>
+                    <a href="#" class="social-link dribbble">Dribbble</a>
+                </div>
+            </div>
+
+            <!-- Team Member 6 -->
+            <div class="team-member">
+                <div class="member-image placeholder"></div>
+                <h3>John Smith</h3>
+                <p class="role">Sponsorship Lead</p>
+                <p class="bio">Building partnerships to support our mission and enhance our events.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin">LinkedIn</a>
+                    <a href="#" class="social-link twitter">Twitter</a>
+                    <a href="#" class="social-link dribbble">Dribbble</a>
+                </div>
+            </div>
+
+            <!-- Team Member 7 -->
+            <div class="team-member">
+                <div class="member-image placeholder"></div>
+                <h3>Laura Green</h3>
+                <p class="role">Community Liaison</p>
+                <p class="bio">Connecting with local organizations to foster community involvement.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin">LinkedIn</a>
+                    <a href="#" class="social-link twitter">Twitter</a>
+                    <a href="#" class="social-link dribbble">Dribbble</a>
+                </div>
+            </div>
+
+            <!-- We're Hiring Section -->
+            <div class="team-member hiring">
+                <div class="member-image placeholder"></div>
+                <h3>We're Hiring!</h3>
+                <p class="role">Join Us</p>
+                <p class="bio">Explore exciting opportunities to be part of our team.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin">LinkedIn</a>
+                    <a href="#" class="social-link twitter">Twitter</a>
+                    <a href="#" class="social-link dribbble">Dribbble</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hiring-section">
+            <h2>We're hiring!</h2>
+            <p>Check out our open positions and apply today!</p>
+            <button class="open-positions-btn">Open positions</button>
+        </div>
+    </div>
+</body>
+</html>

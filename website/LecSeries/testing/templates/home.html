@@ -1,0 +1,153 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A. N. Mitra Memorial Lecture Series</title>
+  <link rel="stylesheet" href="{% static 'homecss.css' %}">
+</head>
+<body>
+    <!-- Navigation -->
+    
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="/" class="nav-item">Home</a>
+            <a href="/about" class="nav-item">About</a>
+            <div class="dropdown">
+                <div class="dropbtn">Schedule ▾</div>
+                <div class="dropdown-content">
+                    <a href="/schedule">Day 1</a>
+                    <a href="/schedule">Day 2</a>
+                    <a href="/schedule">Ed Witten's Lecture</a>
+                </div>
+            </div>
+            <a href="/teaminfo" class="nav-item">Team</a>
+
+        </div>
+        <!--<div class="logo">Logo</div> -->
+        <div class="nav-right">
+            <!-- <a href="/register"> <button class="register-btn">Register</button></a> -->
+            <a href="/register" class="nav-item">Register</a>
+            <div class="dropdown">
+                <div class="dropbtn"> &nbsp&nbsp▾&nbsp&nbsp </div>
+                <div class="dropdown-content">
+                    <a href="/attendees">Attendees</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Page One: Hero Section -->
+    <section id="page-one" class="page-section">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>A. N. Mitra Memorial<br>Lecture Series</h1>
+                <p>In the loving memory of Prof. A. N. Mitra, we are holding this memorial lecture series. This online lecture series is a tribute to the life and work of late professor A. N. Mitra. His contributions to the field of High Energy Physics is recognized widely around the world and he has inspired many to do the same!</p>
+                <p class="date">14 - 15th April</p>
+                <div class="hero-buttons">
+                    <a href="/register"> <button class="register-btn" style="background-color: white; color: black;">Register</button></a>
+                    <button class="learn-more-btn">Learn More</button>
+                </div>
+            </div>
+        </header>
+    </section>
+
+    <!-- Page Two: Insight Section -->
+    <section id="page-two" class="page-section">
+        <div class="insight">
+            <h2>Explore Our Memorial Lecture Series</h2>
+            <p class="subtitle">Join us for a thought-provoking memorial lecture series featuring diverse topics. Each meeting offers a unique perspective from multiple speakers.</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="placeholder-img"></div>
+                    <h3>Diverse Topics for Engaging Discussions</h3>
+                    <p>Our series covers a range of subjects, ensuring a rich learning experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="placeholder-img"></div>
+                    <h3>Live Streaming for Global Participation</h3>
+                    <p>All meetings will be live streamed on YouTube.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="placeholder-img"></div>
+                    <h3>Keynote Address by Our Chief Guest</h3>
+                    <p>Don't miss the main lecture delivered by our distinguished chief guest.</p>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="learn-more-btn">Learn More</button>
+                <button class="sign-up-btn">Sign Up →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Three: Join Section and Footer -->
+    <section id="page-three" class="page-section page-three">
+        <div class="join-section">
+            <h2>Join Our Memorial Lecture Series</h2>
+            <p>Register now and share with your friends!</p>
+            <div class="join-buttons">
+                <a href="/register"> <button class="register-btn">Register</button></a>
+                <button class="share-btn">Share</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Logo
+                    <p>Subscribe to our newsletter for the latest updates on our events and features.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email here">
+                        <button type="submit">Join</button>
+                    </form>
+                    <p class="consent-text">By subscribing, you consent to our Privacy Policy and agree to receive updates.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Quick Links</h4>
+                        <a href="/about">About</a>
+                        <a href="/teaminfo">Contact Us</a>
+                        <a href="/schedule">Events</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Support</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Connect With Us</h4>
+                        <a href="#">Newsletter</a>
+                        <a href="#">Community</a>
+                        <a href="#">Resources</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Partnerships</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Follow Us</h4>
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter/X</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Our Company. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>

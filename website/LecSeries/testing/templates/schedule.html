@@ -1,0 +1,173 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - A. N. Mitra Memorial Lecture Series - Event Schedule</title>
+    <link rel="stylesheet" href="{% static 'eventScheduleCSS.css' %}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="/" class="nav-item">Home</a>
+            <a href="/about" class="nav-item">About</a>
+            <div class="dropdown">
+                <div class="dropbtn">Schedule ▾</div>
+                <div class="dropdown-content">
+                    <a href="/schedule">Day 1</a>
+                    <a href="/schedule">Day 2</a>
+                    <a href="/schedule">Ed Witten's Lecture</a>
+                </div>
+            </div>
+            <a href="/teaminfo" class="nav-item">Team</a>
+
+        </div>
+        <!--<div class="logo">Logo</div> -->
+        <div class="nav-right">
+            <a href="/register"> <button class="register-btn">Register</button></a>
+            <div class="dropdown">
+                <div class="dropbtn"> &nbsp&nbsp▾&nbsp&nbsp </div>
+                <div class="dropdown-content">
+                    <a href="/attendees">Attendees</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Schedule Content -->
+    <main class="schedule-container">
+        <div class="schedule-section">
+            <div class="schedule-header">
+                <div class="date">April 14</div>
+                <div class="session">Day 1 Pre-Lunch</div>
+                <div class="time-range">9:00 AM - 12:30 PM</div>
+            </div>
+
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <div class="speaker">Natarajan Panchapakesan</div>
+                    <div class="topic">
+                        <button type="button" class="collapsible">
+                            <div style="margin:0;display:inline;float:left"><p>Opening remarks and reminiscences</p></div> 
+                            <div style="margin:0;display:inline;float:right"><p>▾</p></div>
+                        </button>
+                        <div class="content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="time">9:00 - 9:30 AM</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="speaker">H. S. Mani</div>
+                    <div class="topic">
+                        <button type="button" class="collapsible">
+                            <div style="margin:0;display:inline;float:left"><p>TBD</p></div> 
+                            <div style="margin:0;display:inline;float:right"><p>▾</p></div>
+                        </button>
+                        <div class="content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="time">9:30 - 10:00 AM</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="speaker">N. D. Hari Dass</div>
+                    <div class="topic">
+                        <button type="button" class="collapsible">
+                            <div style="margin:0;display:inline;float:left"><p>QCD Strings</p></div> 
+                            <div style="margin:0;display:inline;float:right"><p>▾</p></div>
+                        </button>
+                        <div class="content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="time">10:00 - 10:30 AM</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="speaker">Dayanand Parashar and R.S.Kaushal</div>
+                    <div class="topic">
+                        <button type="button" class="collapsible">
+                            <div style="margin:0;display:inline;float:left"><p>Diquarks</p></div> 
+                            <div style="margin:0;display:inline;float:right"><p>▾</p></div>
+                        </button>
+                        <div class="content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="time">10:30 - 11:00 AM</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="speaker">Shashank Bhatnagar</div>
+                    <div class="topic">
+                        <button type="button" class="collapsible">
+                            <div style="margin:0;display:inline;float:left"><p>Two- and Three-Quark System</p></div> 
+                            <div style="margin:0;display:inline;float:right"><p>▾</p></div>
+                        </button>
+                        <div class="content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="time">11:00 - 11:30 AM</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="speaker">Manmohan Gupta</div>
+                    <div class="topic">
+                        <button type="button" class="collapsible">
+                            <div style="margin:0;display:inline;float:left"><p>CKM matrix</p></div> 
+                            <div style="margin:0;display:inline;float:right"><p>▾</p></div>
+                        </button>
+                        <div class="content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="time">11:30 - 12:00 AM</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="speaker">T. V. Ramakrishnan</div>
+                    <div class="topic">
+                        <button type="button" class="collapsible">
+                            <div style="margin:0;display:inline;float:left"><p>The 'Un'free Electron Limit for Metals</p></div> 
+                            <div style="margin:0;display:inline;float:right"><p>▾</p></div>
+                        </button>
+                        <div class="content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="time">12:00 - 12:30 AM</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+</body>
+
+
+</html>

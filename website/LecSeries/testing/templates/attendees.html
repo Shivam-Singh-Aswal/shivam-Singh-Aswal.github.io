@@ -1,0 +1,193 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Lecture Series Attendees</title>
+    <link rel="stylesheet" href="{% static 'attendeesCSS.css' %}">
+</head>
+<body>
+    <!-- Navigation bar -->
+    
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="/" class="nav-item">Home</a>
+            <a href="/about" class="nav-item">About</a>
+            <div class="dropdown">
+                <div class="dropbtn">Schedule ▾</div>
+                <div class="dropdown-content">
+                    <a href="/schedule">Day 1</a>
+                    <a href="/schedule">Day 2</a>
+                    <a href="/schedule">Ed Witten's Lecture</a>
+                </div>
+            </div>
+            <a href="/teaminfo" class="nav-item">Team</a>
+
+        </div>
+        <!--<div class="logo">Logo</div> -->
+        <div class="nav-right">
+            <a href="/register"> <button class="register-btn">Register</button></a>
+            <div class="dropdown">
+                <div class="dropbtn"> &nbsp&nbsp▾&nbsp&nbsp </div>
+                <div class="dropdown-content">
+                    <a href="/attendees">Attendees</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="atom-animation">
+            <div class="nucleus"></div>
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+            <div class="orbit orbit-3"></div>
+        </div>
+
+        <header>
+            <h1>Registered Participants</h1>
+            
+            <div class="search-filter-container">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search by name...">
+                    <button class="search-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="filter-section">
+                    <label>Filter by Role:</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-role="all">All</button>
+                        <button class="filter-btn" data-role="student">Students</button>
+                        <button class="filter-btn" data-role="faculty">Faculty</button>
+                        <button class="filter-btn" data-role="postdoc">Postdocs</button>
+                        <button class="filter-btn" data-role="other">Others</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Total Participants</h3>
+                    <p id="totalCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Students</h3>
+                    <p id="studentCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Faculty</h3>
+                    <p id="facultyCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Postdocs</h3>
+                    <p id="postdocCount">0</p>
+                </div>
+            </div>
+
+            <div class="participants-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Institute</th>
+                            <th>Domain</th>
+                        </tr>
+                    </thead>
+                    <tbody id="participantsTableBody">
+                        <!-- Rows will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Fetch and populate table from JSON
+        async function loadParticipants() {
+            const response = await fetch("{% static 'registrationData.json' %}");
+            const data = await response.json();
+
+            const tableBody = document.getElementById('participantsTableBody');
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            data.forEach(participant => {
+                const row = document.createElement('tr');
+                row.setAttribute('data-role', participant.position.toLowerCase());
+
+                row.innerHTML = `
+                    <td>${participant.name}</td>
+                    <td>${participant.position}</td>
+                    <td>${participant.institute}</td>
+                    <td>${participant.domain || 'Not Specified'}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            updateStats();
+        }
+
+        // Update statistics
+        function updateStats() {
+            const rows = document.querySelectorAll('#participantsTableBody tr');
+            const stats = {
+                total: rows.length,
+                student: 0,
+                faculty: 0,
+                postdoc: 0,
+                other: 0
+            };
+
+            rows.forEach(row => {
+                const role = row.getAttribute('data-role');
+                if (stats.hasOwnProperty(role)) {
+                    stats[role]++;
+                }
+            });
+
+            document.getElementById('totalCount').textContent = stats.total;
+            document.getElementById('studentCount').textContent = stats.student;
+            document.getElementById('facultyCount').textContent = stats.faculty;
+            document.getElementById('postdocCount').textContent = stats.postdoc;
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#participantsTableBody tr');
+            
+            rows.forEach(row => {
+                const name = row.querySelector('td').textContent.toLowerCase();
+                row.style.display = name.includes(searchTerm) ? '' : 'none';
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const role = this.getAttribute('data-role');
+                const rows = document.querySelectorAll('#participantsTableBody tr');
+
+                rows.forEach(row => {
+                    row.style.display = role === 'all' || row.getAttribute('data-role') === role ? '' : 'none';
+                });
+            });
+        });
+
+        // Load data and initialize stats
+        loadParticipants();
+    </script>
+</body>
+</html>
